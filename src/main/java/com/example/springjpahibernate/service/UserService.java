@@ -65,6 +65,8 @@ public class UserService
 
 	public List<User> deleteById(int id) {
 		// TODO Auto-generated method stub
+		
+		this.jpaRepository.deleteById(id);
 		return this.jpaRepository.findAll();
 	}
 	
