@@ -60,6 +60,13 @@ public class UserService
 		// TODO Auto-generated method stub
 		return this.jpaRepository.findByName(name);
 	}
+
+
+
+	public List<User> deleteById(int id) {
+		// TODO Auto-generated method stub
+		return this.jpaRepository.findAll();
+	}
 	
 	
 	
