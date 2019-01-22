@@ -1,13 +1,15 @@
 package com.example.springjpahibernate.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="User_table")
+@Table(name="user")
 public class User {
 
 	public User() {
@@ -16,8 +18,10 @@ public class User {
 	
 	
 	
-	@Id
-	@GeneratedValue
+	 @Id
+	 @GeneratedValue(strategy=GenerationType.AUTO)
+	 @Column(name="user_id")
+	 	
 	private Integer id;
 	
 	private String name;

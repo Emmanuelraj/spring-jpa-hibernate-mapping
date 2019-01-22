@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.springjpahibernate.model.User;
+import com.example.springjpahibernate.model.UserContact;
+import com.example.springjpahibernate.service.UserContactService;
 import com.example.springjpahibernate.service.UserService;
 
 @RestController
@@ -26,21 +28,26 @@ public class UserController
 	
 	
 	
+	@Autowired
+	UserContactService userContactService;
+	
 	
 	
 	@PostMapping("/load")
 	public String  saveMethod(@RequestBody final User user)
 	{
-		
 		userService.saveData(user);
 		
 		return  "save" ;
 	}
 	
 
-	
+	/**
+	 * *
+	 * @return
+	 */
 	@GetMapping("/all")
-	public List<User> findAll()
+	public List<User> fetchDataMethod()
 	{
 		return userService.findAll();
 	}
